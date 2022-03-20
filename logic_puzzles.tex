@@ -3,6 +3,8 @@
 	amsmath,		% Math Environments
     amsfonts,
     amssymb,
+    amsthm,
+    csquotes,
 	mathtools,
 	enumerate,	    % Enumerate Environments
 	float,			% Force Placements
@@ -24,6 +26,20 @@
   	linkcolor  = blue!60,
   	urlcolor   = blue!60
 }
+% \newtheorem{thm}{Theorem}[section]
+\newtheorem{thm}{Theorem}
+\newtheorem{theorem}[thm]{Theorem}
+\newtheorem{lemma}[thm]{Lemma}
+\newtheorem{corollary}[thm]{Corollary}
+\newtheorem{assumption}[thm]{Assumption}
+\newtheorem{definition}[thm]{Definition}
+\newtheorem{proposition}[thm]{Proposition}
+\theoremstyle{remark}
+\newtheorem{remark}[thm]{Remark}
+\newtheorem{example}[thm]{Example}
+
+\numberwithin{equation}{section}
+
 
 
 % -------------------
@@ -116,6 +132,34 @@ returned to the first shop for his haircut. Why?
 
 \newpage
 
+\begin{proposition}
+    A proposition or statement is a sentence that is either true or false.
+\end{proposition}
+
+\vspace{2in}
+
+\begin{definition}
+    Let $P$ and $Q$ be propositions. The conjunction (AND, $\land$) of P and Q, the disjunction
+(OR, $\lor$) of $P$ and $Q$, and the negation or denial (NOT, $\lnot$, $\sim$, ) of P are defined by the truth tables.
+\end{definition}
+
+
+\vspace{2in}
+
+\begin{example}[Implication]
+The following propositions all mean exactly the same thing:
+
+\begin{itemize}
+    \item  If you are born in Rome, then you are Italian.
+    \item You are Italian if you are born in Rome.
+    \item You are born in Rome only if you are Italian.
+    \item Being born in Rome is sufficient to be Italian.
+    \item Being Italian is necessary for being born in Rome.
+\end{itemize}
+\end{example}
+
+\newpage
+
 \question ``Feemster owns more than a thousand books,'' said Albert. 
 
 ``He does not,'' said George. ``He owns fewer than that.'' 
@@ -126,6 +170,51 @@ If only one statement is true, how many books does Feemster own?
 
 \newpage
 
+\begin{definition}[The Converse and Contrapositive]
+    The converse of an implication $P \Longrightarrow Q$ is the reversed implication $Q \Longrightarrow P$.
+The contrapositive of $P \Longrightarrow Q$ is $\lnot Q \Longrightarrow \lnot P$.
+
+\end{definition}
+
+\vspace{1in}
+
+
+\begin{example}
+Let $P$ and $Q$ be the following statements:
+\begin{itemize}
+    \item[$P.$] Claudia is holding a peach.
+    \item[$Q.$] Claudia is holding a piece of fruit.
+\end{itemize}
+
+The implication $P \Longrightarrow Q$ is true, since all peaches are fruit. As a sentence, we have: 
+
+\begin{displayquote}
+If Claudia is holding a peach, then Claudia is holding a piece of fruit.
+\end{displayquote}
+
+\medskip
+
+The converse of $P \Longrightarrow Q$ is the sentence:
+
+\begin{displayquote}
+If Claudia is holding a piece of fruit, then Claudia is holding a peach.
+\end{displayquote}
+
+This is clearly false: Claudia could be holding an apple!
+
+\bigskip
+
+The contrapositive of $P \Longrightarrow Q$ is the following sentence:
+
+\begin{displayquote}
+If Claudia is not holding any fruit, then she is not holding a peach.
+\end{displayquote}
+
+This is clearly true.
+
+\end{example}
+
+\newpage
 
 \question A boy and a girl are sitting on the front steps of their commune. 
 
@@ -137,21 +226,57 @@ If at least one of them is lying, who is which?
 
 \newpage
 
-\question  Professor Merle White of the mathematics department, Professor 
-Leslie Black of philosophy, and Jean Brown, a young stenographer 
-who worked in the university's office of admissions, were lunching 
-together. 
+\question Make a statement about $n$ that is true for, and only true for, all values of $n$ less than 100.
 
-``Isn't it remarkable,'' observed the lady, ``that our last names are 
-Black, Brown, and White and that one of us has black hair, one brown 
-hair, and one white.'' 
+\newpage
 
-``It is indeed,'' replied the person with black hair, ``and have you 
-noticed that not one of us has hair that matches his or her name?''
-``By golly, you're right!'' exclaimed Professor White. 
+\question A person either always answers truthfully, always answers falsely, 
+or alternates true and false answers. How, in two questions, each 
+answered by yes or no, can you determine whether this person is a truther, a 
+liar, or an alternater? 
 
-If the lady's hair isn't brown, what is the color of Professor Black's 
-hair? 
+\newpage
+
+
+\question Three men stand before you. One always answers questions truthfully, one always responds with lies, and one randomizes his answers, 
+sometimes lying and sometimes not. You do not know which man 
+does which, but the men themselves do. How can you identify all 
+three men by asking three questions? Each question may be directed 
+toward any man you choose, and each must be a question that is 
+answered by yes or no.
+
+\newpage
+
+\question Evaluate each of the 10 statements as to its truth or falsity: 
+
+\begin{enumerate}
+    \item Exactly one statement on this list is false. 
+    \item Exactly two statements on this list are false. 
+    \item Exactly three statements on this list are false. 
+    \item Exactly four statements on this list are false. 
+    \item Exactly five statements on this list are false. 
+    \item Exactly six statements on this list are false. 
+    \item Exactly seven statements on this list are false. 
+    \item Exactly eight statements on this list are false. 
+    \item Exactly nine statements on this list are false.
+    \item Exactly ten statements on this list are false. 
+\end{enumerate}
+
+% \question  Professor Merle White of the mathematics department, Professor 
+% Leslie Black of philosophy, and Jean Brown, a young stenographer 
+% who worked in the university's office of admissions, were lunching 
+% together. 
+
+% ``Isn't it remarkable,'' observed the lady, ``that our last names are 
+% Black, Brown, and White and that one of us has black hair, one brown 
+% hair, and one white.'' 
+
+% ``It is indeed,'' replied the person with black hair, ``and have you 
+% noticed that not one of us has hair that matches his or her name?''
+% ``By golly, you're right!'' exclaimed Professor White. 
+
+% If the lady's hair isn't brown, what is the color of Professor Black's 
+% hair? 
 
 \newpage 
 
@@ -174,4 +299,7 @@ However, not knowing the customs, the foreigner makes the mistake of mentioning 
 What effect, if anything, does this \emph{faux pas} have on the tribe?
 
 \end{questions}
+\newpage
+\phantom{some}
+
 \end{document}
