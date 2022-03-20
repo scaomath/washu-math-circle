@@ -1,0 +1,177 @@
+\documentclass[11pt]{exam}
+\usepackage{
+	amsmath,		% Math Environments
+    amsfonts,
+    amssymb,
+	mathtools,
+	enumerate,	    % Enumerate Environments
+	float,			% Force Placements
+	graphicx,		% Use Images
+	hyperref,		% Pointers
+	lastpage,		% Reference Lastpage
+	multicol,		% Use Multi-columns
+	multirow,		% Use Multi-rows
+	titling,			% Title Placement
+    xcolor,
+    latexsym,
+    bm
+}
+% -------------------
+% Hyperref
+% -------------------
+\hypersetup{
+	colorlinks = true,
+  	linkcolor  = blue!60,
+  	urlcolor   = blue!60
+}
+
+
+% -------------------
+% Font and algorithm
+% -------------------
+\usepackage{algorithm}
+% \usepackage[noend]{algpseudocode}
+\usepackage{algpseudocode}
+\usepackage{caption}
+
+\usepackage[utf8]{inputenc} % for fonts
+\usepackage{listings} % for code
+
+
+%% A better template for python
+
+
+% Default fixed font does not support bold face
+%\DeclareFixedFont{\ttb}{T1}{txtt}{bx}{n}{11} % for bold
+\DeclareFixedFont{\ttb}{T1}{txtt}{m}{n}{11} % for bold
+\DeclareFixedFont{\ttm}{T1}{txtt}{m}{n}{11}  % for normal
+
+% Custom colors
+\definecolor{deepblue}{rgb}{0,0,0.5}
+\definecolor{deepred}{rgb}{0.6,0,0}
+\definecolor{deepgreen}{rgb}{0,0.5,0}
+
+% Python style for highlighting
+\newcommand\pythonstyle{\lstset{%
+language=Python,
+basicstyle=\ttm,
+otherkeywords={self},             % Add keywords here
+keywordstyle=\ttb\color{deepblue},
+emph={MyClass,__init__},          % Custom highlighting
+emphstyle=\ttb\color{deepred},    % Custom highlighting style
+stringstyle=\color{deepgreen},
+frame=l,                         % Any extra options here
+xleftmargin=\fboxsep,
+xrightmargin=-\fboxsep,
+showstringspaces=false            % 
+}
+}
+
+% Python environment
+\lstnewenvironment{python}[1][]
+{
+\pythonstyle
+\lstset{#1}
+}
+{}
+
+% Python for external files
+\newcommand{\pythonexternal}[2][]{{%
+\pythonstyle\lstinputlisting[#1]{%
+#2}}}
+
+% Python for inline
+\newcommand{\code}[1]{{\!\!\pythonstyle\lstinline!#1!}}
+\newcommand{\norm}[1]{ \left\|{#1}\right\| }
+\newcommand{\bs}{\boldsymbol}
+
+
+\newcommand{\verteq}{\rotatebox{90}{$\,=$}}
+\newcommand{\equalto}[2]{\underset{\overset{\mkern6mu\verteq}{#2}}{#1}}
+
+\newcommand{\vertapprox}{\rotatebox{90}{$\,\approx$}}
+\newcommand{\approxto}[2]{\underset{\overset{\mkern6mu\vertapprox}{#2}}{#1}}
+
+
+\begin{document}
+\header{\bf WashU Math Circle}{\bf Logic through Puzzles}{\bf Spring 2022} \headrule
+
+
+\begin{questions}
+\question Many years ago, on a sultry July night in Omaha, it was raining 
+heavily at midnight. Is it possible that $72$ hours later the weather in 
+Omaha was sunny?
+
+\newpage
+
+
+\question A logician with some time to kill in a small town decided to get a 
+haircut. The town had only two barbers, each with his own shop. The 
+logician glanced into one shop and saw that it was extremely untidy. 
+The barber needed a shave, his clothes were unkempt, his hair was 
+badly cut. The other shop was extremely neat. The barber was freshly 
+shaved and spotlessly dressed, his hair neatly trimmed. The logician 
+returned to the first shop for his haircut. Why? 
+
+
+\newpage
+
+\question ``Feemster owns more than a thousand books,'' said Albert. 
+
+``He does not,'' said George. ``He owns fewer than that.'' 
+
+``Surely he owns at least one book,'' said Henrietta. 
+
+If only one statement is true, how many books does Feemster own? 
+
+\newpage
+
+
+\question A boy and a girl are sitting on the front steps of their commune. 
+
+``I'm a boy,'' said the one with black hair. 
+
+``I'm a girl,'' said the one with red hair. 
+
+If at least one of them is lying, who is which? 
+
+\newpage
+
+\question  Professor Merle White of the mathematics department, Professor 
+Leslie Black of philosophy, and Jean Brown, a young stenographer 
+who worked in the university's office of admissions, were lunching 
+together. 
+
+``Isn't it remarkable,'' observed the lady, ``that our last names are 
+Black, Brown, and White and that one of us has black hair, one brown 
+hair, and one white.'' 
+
+``It is indeed,'' replied the person with black hair, ``and have you 
+noticed that not one of us has hair that matches his or her name?''
+``By golly, you're right!'' exclaimed Professor White. 
+
+If the lady's hair isn't brown, what is the color of Professor Black's 
+hair? 
+
+\newpage 
+
+\question There is an island upon which a tribe resides. The tribe consists of 1000 people, with various eye colours. Yet, their religion forbids them to know their own eye color, or even to discuss the topic; thus, each resident can (and does) see the eye colors of all other residents, but has no way of discovering his or her own (there are no reflective surfaces). 
+
+Every noon, a ferry stops at the island. If a tribesperson does discover his or her own eye color, then their religion compels them to leave the island at noon the following day in the village square for all to witness, and the rest stay. Every tribesperson can see everyone else at all times and keeps a count of the number of people they see with each eye color (excluding themselves). Every tribesperson on the island knows all the rules in these two paragraphs.
+
+All the tribespeople are highly logical and devout, and they all know that each other is also highly logical and devout (and they all know that they all know that each other is highly logical and devout, and so forth).
+
+(for the purposes of this logic puzzle, ``highly logical'' means that any conclusion that can logically deduced from the information and observations available to an islander, will automatically be known to that islander.)
+
+Of the 1000 islanders, it turns out that 100 of them have blue eyes and 900 of them have brown eyes, although the islanders are not initially aware of these statistics (each of them can of course only see 999 of the 1000 tribespeople).
+
+One day, a blue-eyed foreigner visits to the island and wins the complete trust of the tribe.
+
+One evening, he addresses the entire tribe to thank them for their hospitality.
+
+However, not knowing the customs, the foreigner makes the mistake of mentioning eye color in his address, remarking ``how unusual it is to see another blue-eyed person like myself in this region of the world''.
+
+What effect, if anything, does this \emph{faux pas} have on the tribe?
+
+\end{questions}
+\end{document}
